@@ -2,6 +2,8 @@ package com.practice.ds.linkedlist;
 
 public class LinkedList {
 
+   LinkedListNode head;
+
    /**
     * Approach :
     * 1. Check for head is not null
@@ -19,6 +21,23 @@ public class LinkedList {
          temp = temp.next;
       }
    }
+
+   /* Insert @ start
+      Approach :
+       Make the current head point to the new node
+
+       Test cases :
+        1. Empty linked list
+        2. Single node linked list
+        3. Incoming node is empty / null
+    */
+   public LinkedListNode insertAtStart(LinkedListNode head, int data){
+      LinkedListNode newNode = new LinkedListNode(data);
+      newNode.next = head;
+      head = newNode;
+      return head;
+   }
+
 
 }
 
