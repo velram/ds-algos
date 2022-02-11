@@ -22,7 +22,7 @@ public class LinkedList {
       }
    }
 
-   /* Insert @ start
+   /* Insert @ start - LinkedList (Singly LinkedList)
       Approach :
        Make the current head point to the new node
 
@@ -33,11 +33,41 @@ public class LinkedList {
     */
    public LinkedListNode insertAtStart(LinkedListNode head, int data){
       LinkedListNode newNode = new LinkedListNode(data);
-      newNode.next = head;
+      LinkedListNode temp = head;
+      newNode.next = temp;
       head = newNode;
       return head;
    }
 
+   /**
+    * Delete @ Start - LinkedList (Singly LinkedList)
+    * Approach :
+    *  - Create temp node & assign head to it.
+    *  - Fetch head.next and store it in head.
+    *  - Make head.next as head.
+    *  - now Point the temp.next to null
+    *  - head.next as actual head
+    *  - return head pointer
+    *
+    *  Edge cases -
+    *   - Empty linked list
+    *   - Single node in the list
+    */
+
+    public LinkedListNode deleteAtStart(LinkedListNode head){
+
+       LinkedListNode temp = head;
+
+       if(temp == null){
+          System.out.println("Empty LinkedList can't be deleted");
+          return null;
+       }
+
+       head = head.next; //Pointing new node as the head of the linkedList
+       temp = null;
+       System.gc();
+       return head;
+    }
 
 }
 

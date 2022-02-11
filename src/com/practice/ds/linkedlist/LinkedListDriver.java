@@ -7,14 +7,21 @@ public class LinkedListDriver {
         LinkedListNode head = populateLinkedListHead();
         LinkedListNode firstNode = new LinkedListNode(0);
 
+        //Operation #1 - Print - LinkedList
         //Exected output : 1 -> 2 -> 3 -> 4
         LinkedList linkedList = new LinkedList();
         linkedList.printLinkedList(head);
 
+        //Operation #2 - Insert @ start - LinkedList
         //Exected output : 0 -> 1 -> 2 -> 3 -> 4
         // (Refer line #10 for prev state of LinkedList)
         LinkedListNode result = linkedList.insertAtStart(head, 0);
         System.out.println("\n LinkedList after insertion @ start");
+        linkedList.printLinkedList(result);
+
+        //Operation #3 - Delete @ start  - LinkedList
+        result = linkedList.deleteAtStart(result);
+        System.out.println("\n LinkedList after deletion @ start");
         linkedList.printLinkedList(result);
     }
 
