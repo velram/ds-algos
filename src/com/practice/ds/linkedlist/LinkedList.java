@@ -5,6 +5,7 @@ public class LinkedList {
    LinkedListNode head;
 
    /**
+    * Operation #1 - Print Linked list
     * Approach :
     * 1. Check for head is not null
     * 2. Check for next node is not empty
@@ -22,7 +23,7 @@ public class LinkedList {
       }
    }
 
-   /* Insert @ start - LinkedList (Singly LinkedList)
+   /* Operation #2 - Insert @ start - LinkedList (Singly LinkedList)
       Approach :
        Make the current head point to the new node
 
@@ -39,13 +40,12 @@ public class LinkedList {
       return head;
    }
 
-   /**
-    * Delete @ Start - LinkedList (Singly LinkedList)
+   /** Operation #3 - Delete @ Start - LinkedList (Singly LinkedList)
     * Approach :
     *  - Create temp node & assign head to it.
     *  - Fetch head.next and store it in head.
     *  - Make head.next as head.
-    *  - now Point the temp.next to null
+    *  - now Point the temp.next to null & Free-up the memory of temp
     *  - head.next as actual head
     *  - return head pointer
     *
@@ -53,7 +53,6 @@ public class LinkedList {
     *   - Empty linked list
     *   - Single node in the list
     */
-
     public LinkedListNode deleteAtStart(LinkedListNode head){
 
        LinkedListNode temp = head;
@@ -68,6 +67,36 @@ public class LinkedList {
        System.gc();
        return head;
     }
+
+   /**
+    * Operation #4 - Insert @ end
+    * Approach :
+    *  - Traverse till the end of linkedList
+    *  - Point the last node's next pointer to the new node
+    *
+    *  Edge cases :
+    *   - Empty linked list
+    *   - Single node in the linked list
+     */
+
+   public LinkedListNode insertAtEnd(LinkedListNode head, int data){
+
+      if(head == null){
+         new LinkedListNode(data);
+      }
+
+      LinkedListNode temp = head;
+
+      //This loop will traverse till the last node
+      while(temp.next != null){
+         temp = temp.next;
+      }
+
+      //Now update the lastNode's next pointer to the new node.
+      temp.next = new LinkedListNode(data);
+
+      return head;
+   }
 
 }
 

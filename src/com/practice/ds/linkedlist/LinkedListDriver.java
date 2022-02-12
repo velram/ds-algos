@@ -23,6 +23,11 @@ public class LinkedListDriver {
         result = linkedList.deleteAtStart(result);
         System.out.println("\n LinkedList after deletion @ start");
         linkedList.printLinkedList(result);
+
+        //Operation #4 - Insert @ end - LinkedList
+        result = linkedList.insertAtEnd(result, 5);
+        System.out.println("\n LinkedList after deletion @ end");
+        linkedList.printLinkedList(result);
     }
 
     private static LinkedListNode populateLinkedListHead() {
