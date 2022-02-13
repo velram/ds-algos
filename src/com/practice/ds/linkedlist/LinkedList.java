@@ -71,7 +71,7 @@ public class LinkedList {
    /**
     * Operation #4 - Insert @ end
     * Approach :
-    *  - Traverse till the end of linkedList
+    *  - Traverse till the second last node of linkedList
     *  - Point the last node's next pointer to the new node
     *
     *  Edge cases :
@@ -97,6 +97,37 @@ public class LinkedList {
 
       return head;
    }
+
+
+    /**
+     * Operation #5 - Delete from end - LinkedList
+     *
+     * Approach :
+     * Iterate till the third last node
+     * Change the
+     * Remove the last node (make next pointer of 2nd last node as null)
+     *
+     */
+
+    public LinkedListNode deleteFromEnd(LinkedListNode head){
+
+        if(head == null){
+            System.out.println("Empty linked list - Can not be deleted");
+        }
+        if(head.next == null){
+            return null;
+        }
+
+        LinkedListNode temp = head;
+
+        while(temp.next.next != null){
+            temp = temp.next;
+        }
+        temp.next.next = null;
+        temp.next = null;
+        //Free up the last node
+        return head;
+    }
 
 }
 

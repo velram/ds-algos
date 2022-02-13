@@ -26,6 +26,11 @@ public class LinkedListDriver {
 
         //Operation #4 - Insert @ end - LinkedList
         result = linkedList.insertAtEnd(result, 5);
+        System.out.println("\n LinkedList after insertion @ end");
+        linkedList.printLinkedList(result);
+
+        //Operation #5 - Delete from end - LinkedList
+        result = linkedList.deleteFromEnd(result);
         System.out.println("\n LinkedList after deletion @ end");
         linkedList.printLinkedList(result);
     }
