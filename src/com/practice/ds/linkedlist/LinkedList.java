@@ -129,6 +129,43 @@ public class LinkedList {
         return head;
     }
 
+
+    /**
+     * Operation #6 - Insertion @ Kth Node
+     *
+     * Approach :
+     *  - Navigate till N-1 th node.
+     *  - Point the newNode to temp.next
+     *  - Update the temp.next to newNode
+     *
+     * @param head
+     * @param insertionIndex
+     * @param newData
+     * @return
+     */
+    public LinkedListNode insertAtKthPosition(LinkedListNode head, int insertionIndex, int newData) {
+
+        if(head == null && insertionIndex > 1){
+            System.out.println("Insertion index can not be greater than 1");
+        }
+
+        int loopIndex = 1;
+        LinkedListNode temp = head;
+        LinkedListNode newNode = new LinkedListNode(newData);
+        if(insertionIndex == 1){
+            newNode.next = head;
+            head = newNode;
+            return head;
+        }
+
+        while(temp != null && loopIndex < insertionIndex - 1){
+            temp = temp.next;
+            loopIndex++;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+
+        return head;
+    }
+
 }
-
-

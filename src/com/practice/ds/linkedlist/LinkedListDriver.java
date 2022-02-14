@@ -33,6 +33,11 @@ public class LinkedListDriver {
         result = linkedList.deleteFromEnd(result);
         System.out.println("\n LinkedList after deletion @ end");
         linkedList.printLinkedList(result);
+
+        //Operation #6 - Insert @ kth position - LinkedList
+        result = linkedList.insertAtKthPosition(result, 3, 33);
+        System.out.println("\n LinkedList after insertion @ Kth index");
+        linkedList.printLinkedList(result);
     }
 
     private static LinkedListNode populateLinkedListHead() {
