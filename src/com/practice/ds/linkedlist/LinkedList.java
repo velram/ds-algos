@@ -168,4 +168,35 @@ public class LinkedList {
         return head;
     }
 
+    /**
+     * Operation #6 - Insert @ Kth position from end
+     *
+     * Approach :
+     *  - Traverse the linkedList
+     *  - Find the length of the linkedList
+     *  - Subtract length of linkedList and insertionIndex
+     */
+     public LinkedListNode insertAtKthIndexFromLast(LinkedListNode head, int insertionIndex, int newData){
+         System.out.println("Insert @ Kth Index from last : ");
+         LinkedListNode temp = head;
+         int length = findLength(temp);
+         System.out.println("length : "+ length);
+         return null;
+     }
+
+    private int findLength(LinkedListNode temp) {
+         int length = 0;
+         if(temp == null){
+             return length;
+         }
+
+         while(temp != null){
+             length++;
+             temp = temp.next;
+         }
+
+         return length;
+    }
+
+
 }
