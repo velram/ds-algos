@@ -14,7 +14,7 @@ public class LinkedList {
     * 5. Print each node
     * @param head
     */
-   public void printLinkedList(LinkedListNode head){
+   public void printLinkedList(LinkedListNode head) {
 
       LinkedListNode temp = head;
       while(temp != null){
@@ -176,12 +176,14 @@ public class LinkedList {
      *  - Find the length of the linkedList
      *  - Subtract length of linkedList and insertionIndex
      */
-     public LinkedListNode insertAtKthIndexFromLast(LinkedListNode head, int insertionIndex, int newData){
+     public LinkedListNode insertAtKthIndexFromLast(LinkedListNode head, int kthLastIndex, int newData){
          System.out.println("Insert @ Kth Index from last : ");
          LinkedListNode temp = head;
          int length = findLength(temp);
          System.out.println("length : "+ length);
-         return null;
+         int insertionIndex = (length - kthLastIndex) + 1;
+
+         return insertAtKthPosition(head, insertionIndex, newData);
      }
 
     private int findLength(LinkedListNode temp) {
