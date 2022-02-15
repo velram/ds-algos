@@ -38,6 +38,11 @@ public class LinkedListDriver {
         result = linkedList.insertAtKthPosition(result, 3, 33);
         System.out.println("\n LinkedList after insertion @ Kth index");
         linkedList.printLinkedList(result);
+
+        result = linkedList.insertAtKthIndexFromLast(result, 3, 333);
+        System.out.println("\n LinkedList after insertion @ Kth index from last");
+        linkedList.printLinkedList(result);
+
     }
 
     private static LinkedListNode populateLinkedListHead() {
