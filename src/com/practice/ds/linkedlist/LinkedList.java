@@ -176,7 +176,7 @@ public class LinkedList {
      *  - Find the length of the linkedList
      *  - Subtract length of linkedList and insertionIndex
      */
-     public LinkedListNode insertAtKthIndexFromLast(LinkedListNode head, int kthLastIndex, int newData){
+     public LinkedListNode insertAtKthIndexFromLast(LinkedListNode head, int kthLastIndex, int newData) {
          System.out.println("Insert @ Kth Index from last : ");
          LinkedListNode temp = head;
          int length = findLength(temp);
@@ -188,11 +188,11 @@ public class LinkedList {
 
     private int findLength(LinkedListNode temp) {
          int length = 0;
-         if(temp == null){
+         if(temp == null) {
              return length;
          }
 
-         while(temp != null){
+         while(temp != null) {
              length++;
              temp = temp.next;
          }
