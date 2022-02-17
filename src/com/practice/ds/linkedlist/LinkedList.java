@@ -201,4 +201,29 @@ public class LinkedList {
     }
 
 
+    /**
+     * Operation #7 - Reverse a LinkedList
+     *
+     */
+    public LinkedListNode reverseLinkedList(LinkedListNode head){
+
+        LinkedListNode current = head;
+        LinkedListNode next = null;
+        LinkedListNode previous = null;
+
+        if(head == null || head.next == null){
+            return head;
+        }
+
+        while(current != null){
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        head = previous;
+        return head;
+    }
+
+
 }
