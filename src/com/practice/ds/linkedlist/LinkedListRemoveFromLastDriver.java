@@ -19,7 +19,7 @@ class LinkedListLastNodeRemovalDriver {
      * Approach :
      *  - Traverse thru the entire list
      *  - count the list length
-     *  - 
+     *  - Subtract length - Kth last
      * @param head
      * @param kthLastIndex
      * @return
